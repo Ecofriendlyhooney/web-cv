@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .accordion:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Spring Boot Java Gradle Jar to GCP GCE deploy</h2>
+<p>This is step by step user guide </p>
+<button class="accordion">1. Creating Spring boot Project</button>
+<div class="panel">
+    <H4>https://start.spring.io/</H4>
+    <H5>-Gradle</H5>
+    <H5>-Java</H5>
+    <H5>-Spring boot 2.7.2</H5>
+    <H5>-Packaing : jar</H5>
+    <H5>-Java 8 ("Not 17")</H5>
+
+    <H4> Dependencies</H4>
+    <H5>-Spring Web: HTTP client & Spring</H5>
+    <H5>-Spring Data JPA: JPA repository</H5>
+    <H5>-MySQL Driver: MySQL driver</H5>
+    <H5>-Lombok: gettter / setter</H5>
+    <H5>-Thymeleaf : template engine</H5>
+</div>
+
+<button class="accordion">2. Creat Controler</button>
+<div class="panel">
+    <h4>Rest controller</h4>
+</div>
+
+<button class="accordion">3. Run applicatoin as test</button>
+<div class="panel">
+    <h4>Test Run</h4>
+    <h4>check localhost 8080</h4>
+</div>
+
+<button class="accordion">4. Github Respositories</button>
+<div class="panel">
+    <h4>Create Github repositories</h4>
+    <h4>check Github</h4>
+</div>
+
+<button class="accordion">5. GCP Google Compute Engine Create</button>
+<div class="panel">
+
+    <h4>reference : https://www.infiproton.com/post/multiple-services-to-deploy-spring-boot-app-in-gcp</h4>
+    <h4>Create Github repositories</h4>
+    <H4>sudo apt-get update</H4>
+    <H4>sudo apt-get install openjdk-8-jdk</H4>
+
+    <H4>git clone https://github.com/projectname.git </H4>
+
+    <H4>cd target folder (in the instance)</H4>
+    <H4> ./gradlew jar</H4>
+    <H4>BUILD SUCCESSFUL in 1m 34s</H4>
+    <H4>7 actionable tasks: 7 executed</H4>
+    <H4>now can see 'build' folder</H4>
+    <H4>cd build/libs</H4>
+    <H4>now can see 'jar_file_name.jar'</H4>
+    <H4>ex) web-cv-0.0.1-SNAPSHOT.jar</H4>
+    <H4>java -jar web-cv-0.0.1-SNAPSHOT.jar</H4>
+    <H4>Create SSH</H4>
+    <H4>Create public key</H4>
+    <H4>register public SSH key to metadata</H4>
+    <H4></H4>
+    <H4></H4>
+    <H4></H4>
+
+
+
+
+    <H4></H4>
+
+</div>
+
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

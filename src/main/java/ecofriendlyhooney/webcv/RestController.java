@@ -18,6 +18,12 @@ public class RestController {
         return mav;
     }
 
+    @GetMapping("/gradle_guide")
+    public ModelAndView userguide (ModelAndView mav) {
+        mav.setViewName("gradle_guide.html");
+        return mav;
+    }
+
     @GetMapping("/jp")
     public ModelAndView japanese (ModelAndView mav) {
         mav.setViewName("jp.html");
